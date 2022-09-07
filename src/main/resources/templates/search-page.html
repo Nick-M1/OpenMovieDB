@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Search Website</title>
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+          integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <!-- custom css -->
+    <link rel="stylesheet" th:href="@{/main.css}"/>
+</head>
+<body>
+
+<div class="wrapper">
+    <!-- logo -->
+    <div class="logo">
+        <div class="container">
+            <p>OpenMovie Website</p>
+        </div>
+    </div>
+    <!-- end of logo -->
+    <!-- search container -->
+    <div class="search-container">
+        <div class="search-element">
+            <h3>Search Movie:</h3>
+            <input type="text" class="form-control" placeholder="Search Movie Title ..." name="movie-search-box" id="movie-search-box"
+                   onkeydown="findMovies(this)">
+
+            <script>
+                function findMovies(str) {
+                    if (event.keyCode === 13 && str.value.length > 0) {
+                        window.location.href = 'http://localhost:8080/api/v1/openmovie/search/title/' + str.value;
+                    }
+                }
+            </script>
+
+        </div>
+    </div>
+    <!-- end of search container -->
+
+    <!-- result container -->
+      <div class = "container">
+
+        <div class = "result-container">
+          <div class = "result-grid" id = "result-grid" th:each="hashmap : ${ search.result }">
+
+            <!-- movie information here -->
+            <div class = "movie-poster">
+                <img th:src="${ hashmap.Poster }" alt="poster">
+            </div>
+            <div class = "movie-info" >
+                <a th:href="${ 'http://localhost:8080/api/v1/openmovie/search/imdbID/' + hashmap.imdbID }">
+                    <button class = "movie-title"><span th:text="${hashmap.Title}"></span></button>
+                </a>
+
+                <ul class = "movie-misc-info">
+                    <li class="year">Year: <span th:text="${ hashmap.Year }"></span></li>
+                    <li class="year">imdbID: <span th:text="${ hashmap.imdbID }"></span></li>
+                    <li class="rated">Type: <span th:text="${ hashmap.Type }"></span></li>
+
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- end of result container -->
+</div>
+
+
+</body>
+</html>
