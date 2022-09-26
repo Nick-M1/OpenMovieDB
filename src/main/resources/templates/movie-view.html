@@ -63,12 +63,12 @@
                     <p class="genre"><b>Genre: </b>
                         <span th:each="genre : ${ movie.genres }" th:text="${genre + ',  '}"></span>
                     </p>
-                    <p><b>Writer: </b>
-                        <span th:each="writer : ${ movie.writers }" th:text="${writer + ',  '}"></span>
-                    </p>
-                    <p><b>Actors: </b>
-                        <span th:each="actor : ${ movie.actors }" th:text="${actor + ',  '}"></span>
-                    </p>
+<!--                    <p><b>Writer: </b>-->
+<!--                        <span th:each="writer : ${ movie.writers }" th:text="${writer + ',  '}"></span>-->
+<!--                    </p>-->
+<!--                    <p><b>Actors: </b>-->
+<!--                        <span th:each="actor : ${ movie.actors }" th:text="${actor + ',  '}"></span>-->
+<!--                    </p>-->
 
                     <p class="plot"><b>Plot: </b><span th:text="${ movie.plot }"></span></p>
                     <p class="language"><b>Countries: </b> <span th:text="${ movie.countries }"></span></p>
