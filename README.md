@@ -12,17 +12,10 @@
 
 
 
-https://user-images.githubusercontent.com/91367903/192347451-fcae8592-4b22-42ec-9cce-673ee27338f0.mp4
+## Demo:
+https://user-images.githubusercontent.com/91367903/192347823-be4cc6c4-77ac-41ca-b761-12b72b1d52e0.mp4
 
 
-## Examples:
-Searching for "Batman":
-![](src/main/resources/static/imgs/img_2.png)
-![](src/main/resources/static/imgs/img_3.png)
-
-Clicking on the 1st item returned from Search results:
-![](src/main/resources/static/imgs/img.png)
-![](src/main/resources/static/imgs/img_1.png)
 
 ## How to set up:
 1. Insert your specific OpenMovieAPI key into the application.properties file in the resources folder.
