@@ -20,8 +20,6 @@
     <div class="logo">
         <div class="container">
             <p>OpenMovie Website</p>
-            <p><span th:each="writer : ${ movie.writers }" th:text="${ writer + ', ' }"></span>
-            </p>
         </div>
     </div>
     <!-- end of logo -->
@@ -29,11 +27,18 @@
     <div class="search-container">
         <div class="search-element">
             <h3>Search Movie:</h3>
-            <input type="text" class="form-control" placeholder="Search Movie Title ..." id="movie-search-box"
-                   onkeyup="findMovies()" onclick="findMovies()">
+            <input type="text" class="form-control" placeholder="Search Movie Title ..." name="movie-search-box" id="movie-search-box"
+                   onkeydown="findMovies(this)">
+
+            <script>
+                function findMovies(str) {
+                    if (event.keyCode === 13 && str.value.length > 0) {
+                        window.location.href = 'http://localhost:8080/api/v1/openmovie/search/title/' + str.value;
+                    }
+                }
+            </script>
 
         </div>
-
     </div>
     <!-- end of search container -->
 
@@ -75,9 +80,6 @@
     </div>
     <!-- end of result container -->
 </div>
-
-
-<!-- movie app js -->
 
 </body>
 </html>
