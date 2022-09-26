@@ -9,6 +9,12 @@
 2. Using OpenMovieAPI, returns the 10 most relevant movies & tv-shows for this search, and displays this for the user.
 3. The user can click on any of the returned items and it will go to that specific URL with more detailed information about the movie / tv-show, using http://localhost:8080/api/v1/openmovie/search/imdbID/{imdbID}
 
+
+
+
+https://user-images.githubusercontent.com/91367903/192347451-fcae8592-4b22-42ec-9cce-673ee27338f0.mp4
+
+
 ## Examples:
 Searching for "Batman":
 ![](src/main/resources/static/imgs/img_2.png)
